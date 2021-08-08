@@ -8,11 +8,10 @@ export default function Home() {
   const images = [
     {
       original: "/1.png",
-      thumbnail: "https://picsum.photos/id/1018/250/150/",
+      description: "It was the sound of seagulls that woke us up",
     },
     {
       original: "/2.png",
-      thumbnail: "https://picsum.photos/id/1015/250/150/",
     },
     {
       original: "3.png",
