@@ -20,7 +20,7 @@ a {
 }
 
 nav {
-  padding: 5px 0;
+  padding: 10px 0;
   display: flex;
   /* justify-content: center; */
   align-items: flex-end;
@@ -34,6 +34,16 @@ nav a {
 }
 nav a:hover {
   color: rgb(189, 186, 186);
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 30px;
+  color: #777;
+  border-top: 1px solid #313131;
+  font-family: "Courier New", Courier, monospace;
 }
 
 * {
