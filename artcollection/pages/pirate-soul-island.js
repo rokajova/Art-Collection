@@ -29,12 +29,10 @@ export default function Home() {
       .firestore()
       .collection("Art")
       .onSnapshot((snap) => {
-        const blogs = snap.docs.map((doc) => ({
-          // get the unique doc from firestore doc, this will be the post url
-          id: doc.id,
+        const art = snap.docs.map((doc) => ({
           ...doc.data(),
         }));
-        setBlogs(blogs);
+        setArt(art);
       });
   }, []);
 
@@ -42,10 +40,11 @@ export default function Home() {
     <div>
       <div style={{ borderBottom: "1px solid #313131" }}>
         {" "}
-        <ImageGallery showIndex={true} indexSeparator={" | "} items={images} />
+        <ImageGallery showIndex={true} indexSeparator={" | "} items={art} />
       </div>
 
-      <button onClick={() => console.log(images)}>Check</button>
+      <button onClick={() => console.log(art)}>Check art</button>
+      <button onClick={() => console.log(images)}>Check images</button>
       <div>item</div>
       <div>item</div>
       <div>item</div>
