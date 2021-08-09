@@ -9,20 +9,20 @@ import "firebase/storage";
 export default function Home() {
   const [art, setArt] = useState([]);
 
-  const images = [
-    {
-      original: "/1.png",
-      descriptions: "Fuck",
-    },
-    {
-      original: "/2.png",
-      descriptions: "Fuck",
-    },
-    {
-      original: "3.png",
-      descriptions: "Fuck",
-    },
-  ];
+  const [original, setOriginal] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    firebase.firestore().collection("Art").add({
+      original: original,
+      description: description,
+    });
+
+    setOriginal("");
+    setDescription("");
+  };
 
   useEffect(() => {
     firebase
@@ -43,15 +43,23 @@ export default function Home() {
         <ImageGallery showIndex={true} indexSeparator={" | "} items={art} />
       </div>
 
+      <form>
+        <input
+          type="text"
+          placeholder="original link"
+          value={original}
+          onChange={({ target }) => setOriginal(target.value)}
+        />
+        <input
+          type="text"
+          placeholder="description"
+          value={description}
+          onChange={({ target }) => setDescription(target.value)}
+        />
+        <button onClick={handleSubmit}>GET THAT SHIT IN THE DB</button>
+      </form>
+
       <button onClick={() => console.log(art)}>Check art</button>
-      <button onClick={() => console.log(images)}>Check images</button>
-      <div>item</div>
-      <div>item</div>
-      <div>item</div>
-      <div>item</div>
-      <div>item</div>
-      <div>item</div>
-      <div>item</div>
     </div>
   );
 }
