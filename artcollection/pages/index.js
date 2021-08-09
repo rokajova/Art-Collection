@@ -8,7 +8,6 @@ export default function Home() {
   const images = [
     {
       original: "/1.png",
-      description: "It was the sound of seagulls that woke us up",
     },
     {
       original: "/2.png",
@@ -20,14 +19,22 @@ export default function Home() {
 
   return (
     <div>
-      <nav>Pirate</nav>
-      <ImageGallery
-        showIndex={true}
-        indexSeparator={" | "}
-        showThumbnails={false}
-        items={images}
-      />
-      <div>SHOW ALL</div>
+      <nav>
+        <a onClick={() => console.log(images)}>/Pirate Soul Island/</a>
+      </nav>
+      <div style={{ borderBottom: "1px solid #313131" }}>
+        {" "}
+        <ImageGallery showIndex={true} indexSeparator={" | "} items={images} />
+      </div>
+
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
     </div>
   );
 }
