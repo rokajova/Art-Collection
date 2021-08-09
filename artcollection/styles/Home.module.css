@@ -1,0 +1,38 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  cursor: pointer;
+  border-radius: 5%;
+  border: 1px solid white;
+  opacity: 0.8;
+  transition: 0.5s ease;
+}
+
+.image:hover {
+  opacity: 1;
+  border-radius: 0;
+}
+
+.button {
+  background: #5f583f91;
+  cursor: pointer;
+  padding: 0.2rem;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #313131;
+  color: #ffffff;
+  transition: ease 0.4s;
+  margin: 15px;
+  padding: 5px;
+}
+
+.button:hover {
+  background: #5f583f;
+}
