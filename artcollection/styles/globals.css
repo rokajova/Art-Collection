@@ -36,6 +36,10 @@ nav a:hover {
   color: rgb(189, 186, 186);
 }
 
+nav img {
+  width: 25px;
+}
+
 footer {
   display: block;
   text-align: center;
