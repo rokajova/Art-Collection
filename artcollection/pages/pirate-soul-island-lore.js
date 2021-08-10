@@ -8,6 +8,8 @@ import styles from "../styles/Collection.module.css";
 export default function Home() {
   const [art, setArt] = useState([]);
 
+  const [toggler, setToggler] = useState(false);
+
   useEffect(() => {
     firebase
       .firestore()
@@ -23,19 +25,17 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <div className={styles.container}>
-        {art.map((res) => (
-          <div>
-            <h3>
-              <a>{res.description}</a>
-            </h3>
-            <img src={res.original} />
-            <p>{res.lore}</p>
-          </div>
-        ))}
-        <h3>The End.</h3>
-      </div>
+    <div className={styles.container}>
+      {art.map((res) => (
+        <div className={styles.main}>
+          <h2>{res.description}</h2>
+          <img className={styles.image} src={res.original} />
+          <p>{res.lore}</p>
+          <hr className={styles.horLine} />
+        </div>
+      ))}
+
+      <h3>The End.</h3>
     </div>
   );
 }
