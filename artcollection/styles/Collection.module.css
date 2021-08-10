@@ -3,9 +3,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #313131;
+  margin-right: 10px;
 }
 
 .container img {
   width: 480px;
+  height: 480px;
+}
+
+.container a {
+  cursor: pointer;
+  color: rgb(221, 214, 214);
+  transition: 0.5s ease;
+}
+
+.container a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.container span {
+  padding: 4px;
 }

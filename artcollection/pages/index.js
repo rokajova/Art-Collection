@@ -7,7 +7,12 @@ import "react-image-gallery/styles/css/image-gallery.css";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <h2>/ pirate soul island / collection</h2>
+      <h2>
+        {" "}
+        <Link href="/pirate-soul-island">
+          <a>/ pirate soul island /</a>
+        </Link>
+      </h2>
       <Link href="/pirate-soul-island">
         <Image
           src="/psi.png"
@@ -18,7 +23,7 @@ export default function Home() {
       </Link>
       <Link href="https://opensea.io/collection/pirate-soul-island">
         <a target="_blank" className={styles.button}>
-          Explore on Opensea!
+          explore on Opensea!
         </a>
       </Link>
     </div>

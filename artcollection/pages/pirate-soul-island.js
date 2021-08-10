@@ -38,15 +38,15 @@ export default function Home() {
           slideInterval={5000}
         />
       </div>
-
-      {art.map((res) => (
-        <div className={styles.container}>
-          {" "}
-          <h3>{res.description}</h3>
-          <img src={res.original} />
-          <p>{res.lore}</p>
-        </div>
-      ))}
+      <div className={styles.container}>
+        <h1>explore</h1>
+        {art.map((res) => (
+          <span>
+            {" "}
+            <a>{res.description}</a>
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

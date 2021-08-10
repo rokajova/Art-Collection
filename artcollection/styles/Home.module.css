@@ -7,6 +7,16 @@
   align-items: center;
 }
 
+.container a {
+  color: rgb(224, 224, 224);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.container a:hover {
+  color: #ffff;
+}
+
 .image {
   cursor: pointer;
   border-radius: 5%;
