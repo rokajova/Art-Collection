@@ -9,10 +9,6 @@ import styles from "../styles/Collection.module.css";
 export default function Home() {
   const [art, setArt] = useState([]);
 
-  const [original, setOriginal] = useState("");
-  const [description, setDescription] = useState("");
-  const [lore, setLore] = useState("");
-
   useEffect(() => {
     firebase
       .firestore()
@@ -20,6 +16,7 @@ export default function Home() {
       .orderBy("number")
       .onSnapshot((snap) => {
         const art = snap.docs.map((doc) => ({
+          id: doc.id,
           ...doc.data(),
         }));
         setArt(art);
@@ -34,12 +31,13 @@ export default function Home() {
           showIndex={true}
           indexSeparator={" | "}
           items={art}
-          slideDuration={600}
+          slideDuration={300}
           slideInterval={5000}
+          showFullscreenButton={false}
         />
       </div>
       <div className={styles.container}>
-        <h1>explore</h1>
+        <h1>explore on Opensea</h1>
         {art.map((res) => (
           <span>
             {" "}
