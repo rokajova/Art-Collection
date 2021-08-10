@@ -40,8 +40,15 @@ export default function Home() {
       <div className={styles.container}>
         <h1>
           {" "}
-          <Link href="/pirate-soul-island-lore">explore</Link>
+          <Link href="/pirate-soul-island-lore">lore</Link>
         </h1>
+        <a
+          href="https://opensea.io/collection/pirate-soul-island"
+          target="_blank"
+        >
+          {" "}
+          <img className={styles.openseaLogo} src="./oslogo.png" />
+        </a>
       </div>
     </div>
   );

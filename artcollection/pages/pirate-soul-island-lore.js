@@ -34,8 +34,14 @@ export default function Home() {
           <hr className={styles.horLine} />
         </div>
       ))}
-
       <h3>The End.</h3>
+      <a
+        href="https://opensea.io/collection/pirate-soul-island"
+        target="_blank"
+      >
+        {" "}
+        <img className={styles.openseaLogo} src="./oslogo.png" />
+      </a>
     </div>
   );
 }
