@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import "firebase/storage";
@@ -25,11 +26,15 @@ export default function Home() {
     <div>
       <div className={styles.container}>
         {art.map((res) => (
-          <span>
-            {" "}
-            <a>{res.description}</a>
-          </span>
+          <div>
+            <h3>
+              <a>{res.description}</a>
+            </h3>
+            <img src={res.original} />
+            <p>{res.lore}</p>
+          </div>
         ))}
+        <h3>The End.</h3>
       </div>
     </div>
   );
