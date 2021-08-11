@@ -27,21 +27,26 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {art.map((res) => (
-        <div className={styles.main}>
+        <div>
           <h2>{res.description}</h2>
           <img className={styles.image} src={res.original} />
           <p>{res.lore}</p>
           <hr className={styles.horLine} />
         </div>
       ))}
-      <h3>The End.</h3>
-      <a
-        href="https://opensea.io/collection/pirate-soul-island"
-        target="_blank"
-      >
+      <div>
         {" "}
-        <img className={styles.openseaLogo} src="./oslogo.png" />
-      </a>
+        <h3>The End.</h3>
+      </div>
+      <div>
+        <a
+          href="https://opensea.io/collection/pirate-soul-island"
+          target="_blank"
+        >
+          {" "}
+          <img className={styles.openseaLogo} src="./oslogo.png" />
+        </a>
+      </div>
     </div>
   );
 }

@@ -6,6 +6,16 @@
   text-align: center;
 }
 
+.container p {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.container h2 {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
 .image {
   max-width: 500px;
   width: 100%;
