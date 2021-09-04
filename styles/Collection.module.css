@@ -1,43 +1,18 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
-.container p {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-.container h2 {
-  margin-left: 2px;
-  margin-right: 2px;
+.imageCard {
+  padding: 5px;
+  border: 1px solid red;
+  border-radius: 20px;
 }
 
 .image {
-  max-width: 500px;
   width: 100%;
-  height: auto;
-}
-
-.openseaLogo {
-  max-width: 30px;
-  cursor: pointer;
-}
-
-.container a {
-  cursor: pointer;
-  color: rgb(221, 214, 214);
-  transition: 0.5s ease;
-}
-
-.container a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.horLine {
-  border: 1px solid #313131;
+  min-width: 250px;
 }
