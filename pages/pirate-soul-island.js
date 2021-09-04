@@ -38,10 +38,6 @@ export default function Home() {
         />
       </div>
       <div className={styles.container}>
-        <h1>
-          {" "}
-          <Link href="/pirate-soul-island-lore">lore</Link>
-        </h1>
         <a
           href="https://opensea.io/collection/pirate-soul-island"
           target="_blank"
