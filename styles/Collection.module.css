@@ -1,0 +1,64 @@
+.container img {
+  max-width: 100%;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  padding: 1em;
+  background-color: grey;
+}
+
+.item {
+  background: lightgray;
+}
+
+.description {
+  padding: 1em;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.377);
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxContent {
+  width: 75%;
+  background: black;
+  padding: 1em;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background: red;
+  top: -1em;
+  right: -1em;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close::after {
+  content: "X";
+  color: white;
+  font-weight: 700;
+}

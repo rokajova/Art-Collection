@@ -23,14 +23,14 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {" "}
       {/* Items */}
       <div className={styles.portfolio}>
         <div className={styles.item}>
           <img src="https://unsplash.it/300?image=1080" />
-          <div className={styles.desrciption}>
-            <h3 className={styles.title}></h3>
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
             <a href="" className={styles.button}>
               More Info
             </a>
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <div className={styles.item}>
           <img src="https://unsplash.it/300?image=108" />
-          <div className={styles.desrciption}>
+          <div className={styles.description}>
             <h3 className={styles.title}>Title</h3>
             <a href="" className={styles.button}>
               More Info
@@ -47,8 +47,8 @@ export default function Home() {
         </div>
         <div className={styles.item}>
           <img src="https://unsplash.it/300?image=100" />
-          <div className={styles.desrciption}>
-            <h3 className={styles.title}></h3>
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
             <a href="" className={styles.button}>
               More Info
             </a>
