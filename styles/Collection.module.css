@@ -4,10 +4,15 @@
 
 .portfolio {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1em;
   padding: 1em;
   background-color: grey;
+}
+
+.portfolio img {
+  width: 100%;
+  height: auto;
 }
 
 .item {
@@ -31,9 +36,15 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.377);
   color: white;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
+  transform: scale(0, 0);
+  transition: transform ease-in-out 0.2s;
+}
+
+.lightbox:target {
+  transform: scale(1, 1);
 }
 
 .lightboxContent {

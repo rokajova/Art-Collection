@@ -31,7 +31,7 @@ export default function Home() {
           <img src="https://unsplash.it/300?image=1080" />
           <div className={styles.description}>
             <h3 className={styles.title}>Title</h3>
-            <a href="" className={styles.button}>
+            <a href="#1" className={styles.button}>
               More Info
             </a>
           </div>
@@ -54,10 +54,82 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={styles.item}>
+          <img src="https://unsplash.it/300?image=100" />
+          <div className={styles.description}>
+            <h3 className={styles.title}>Title</h3>
+            <a href="#2" className={styles.button}>
+              More Info
+            </a>
+          </div>
+        </div>
       </div>
       {/* Lightbox */}
       <div className={styles.lightboxes}>
-        <div className={styles.lightbox}>
+        <div id="1" className={styles.lightbox}>
           <div className={styles.lightboxContent}>
             <a href="#" className={styles.close}></a>
             <img src="https://unsplash.it/900/400?image=1080" />
@@ -70,6 +142,15 @@ export default function Home() {
           <div className={styles.lightboxContent}>
             <a href="#" className={styles.close}></a>
             <img src="https://unsplash.it/900/400?image=108" />
+            <h3 className={styles.lightboxTitle}>Title</h3>
+            <p className={styles.lightboxBody}>Text here!</p>
+          </div>
+        </div>
+
+        <div id="2" className={styles.lightbox}>
+          <div className={styles.lightboxContent}>
+            <a href="#!" className={styles.close}></a>
+            <img src="https://unsplash.it/900/400?image=10" />
             <h3 className={styles.lightboxTitle}>Title</h3>
             <p className={styles.lightboxBody}>Text here!</p>
           </div>
