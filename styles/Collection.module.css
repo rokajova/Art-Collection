@@ -7,7 +7,6 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1em;
   padding: 1em;
-  background-color: grey;
 }
 
 .portfolio img {
@@ -16,11 +15,20 @@
 }
 
 .item {
-  background: lightgray;
+  background: rgba(53, 42, 25, 0.384);
+  border: 10px double #3f3531;
+  transition: ease 0.5s;
+}
+
+.item:hover {
+  box-shadow: 0 0 10px rgb(201, 191, 138);
 }
 
 .description {
   padding: 1em;
+  text-align: center;
+  color: rgb(236, 235, 231);
+  letter-spacing: 1.5px;
 }
 
 .title {
@@ -39,8 +47,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   transform: scale(0, 0);
-  transition: transform ease-in-out 0.2s;
+  transition: ease-in-out 0.1s;
 }
 
 .lightbox:target {
@@ -50,7 +59,7 @@
 .lightboxContent {
   max-width: 640px;
   width: 90%;
-  background: black;
+  background: rgb(32, 28, 23);
   padding: 1em;
   position: relative;
   overflow-wrap: break-word;
@@ -58,9 +67,9 @@
 
 .close {
   position: absolute;
-  width: 2em;
-  height: 2em;
-  background: red;
+  width: 2.5em;
+  height: 2.5em;
+  background: rgb(238, 232, 232);
   top: -1em;
   right: -1em;
   border-radius: 50%;
@@ -72,6 +81,11 @@
 
 .close::after {
   content: "X";
-  color: white;
-  font-weight: 700;
+  color: black;
+  font-weight: 800;
+}
+
+.oslogo {
+  width: 30px;
+  cursor: pointer;
 }

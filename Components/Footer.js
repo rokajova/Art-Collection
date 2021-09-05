@@ -4,10 +4,10 @@ const Footer = () => {
       Made by{" "}
       <a
         target="_blank"
-        style={{ color: "#f1f1f1" }}
+        style={{ color: "lightgray" }}
         href="https://www.github.com/rokajova"
       >
-        rokajova
+        <strong>rokajova</strong>
       </a>{" "}
     </footer>
   );

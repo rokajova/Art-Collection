@@ -28,13 +28,13 @@ export default function Home() {
       <div className={styles.portfolio}>
         {art.map((res) => (
           <div className={styles.item}>
-            <img src={res.original} />
-            <div className={styles.description}>
-              <h3 className={styles.title}>{res.description}</h3>
-              <a href={"#" + res.number} className={styles.button}>
-                More Info
-              </a>
-            </div>
+            <a href={"#" + res.number}>
+              {" "}
+              <img src={res.original} />
+              <div className={styles.description}>
+                <h3 className={styles.title}>{res.description}</h3>
+              </div>
+            </a>
           </div>
         ))}
       </div>
@@ -45,10 +45,17 @@ export default function Home() {
         {art.map((res) => (
           <div id={res.number} className={styles.lightbox}>
             <div className={styles.lightboxContent}>
-              <a href="#" className={styles.close}></a>
+              <a href="#!" className={styles.close}></a>
               <img src={res.original} />
               <h3 className={styles.lightboxTitle}>{res.description}</h3>
               <p className={styles.lightboxBody}>{res.lore}</p>
+              <a
+                href="https://opensea.io/collection/pirate-soul-island"
+                target="_blank"
+              >
+                {" "}
+                <img className={styles.oslogo} src="./oslogo.png" />{" "}
+              </a>
             </div>
           </div>
         ))}
