@@ -5,7 +5,10 @@ const Navbar = () => {
   return (
     <nav>
       <Link href="/pirate-soul-island">
-        <a>/ pirate soul island /</a>
+        <a>Nuked Nations</a>
+      </Link>
+      <Link href="/pirate-soul-island">
+        <a>Pirate Soul Island</a>
       </Link>
     </nav>
   );

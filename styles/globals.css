@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap");
 
 body {
   padding: 0;
@@ -32,9 +33,12 @@ nav a {
   margin-left: 12px;
   transition: ease 0.5s;
   cursor: pointer;
+  background: rgb(75, 64, 41);
+  padding: 0px 4px 0px 4px;
+  border-radius: 4px;
 }
 nav a:hover {
-  color: rgb(189, 186, 186);
+  background: rgb(43, 37, 25);
 }
 
 footer {
