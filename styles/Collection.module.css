@@ -28,7 +28,7 @@
   padding: 1em;
   text-align: center;
   color: rgb(236, 235, 231);
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
 .title {
@@ -88,4 +88,9 @@
 .oslogo {
   width: 30px;
   cursor: pointer;
+  transition: ease 0.5s;
+  border-radius: 50%;
+}
+.oslogo:hover {
+  background: rgb(50, 127, 216);
 }

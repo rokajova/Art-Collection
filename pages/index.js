@@ -5,49 +5,43 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div>
-      {" "}
-      <div className={styles.container}>
-        <h2>
-          {" "}
-          <Link href="/pirate-soul-island">
-            <a>Pirate Soul Island</a>
+    <div className={styles.container}>
+      <div className={styles.portfolio}>
+        <div className={styles.item}>
+          <Link href="nuked-nations">
+            <a>
+              {" "}
+              <img className={styles.featureImage} src="./nn.png" />
+              <div className={styles.description}>
+                <h3 className={styles.title}>Nuked Nations</h3>
+              </div>
+            </a>
           </Link>
-        </h2>
-        <Link href="/pirate-soul-island">
-          <Image
-            src="/psi.png"
-            height="400"
-            width="500"
-            className={styles.image}
-          />
-        </Link>
-        <Link href="https://opensea.io/collection/pirate-soul-island">
-          <a target="_blank" className={styles.button}>
-            explore on Opensea!
-          </a>
-        </Link>
-      </div>
-      <div className={styles.container}>
-        <h2>
-          {" "}
-          <Link href="/pirate-soul-island">
-            <a>Nuked Nations</a>
+          <Link href="https://opensea.io/collection/nuked-nations">
+            <a target="_blank">
+              {" "}
+              <img className={styles.oslogo} src="./oslogo.png" />{" "}
+            </a>
           </Link>
-        </h2>
-        <Link href="/pirate-soul-island">
-          <Image
-            src="/psi.png"
-            height="400"
-            width="500"
-            className={styles.image}
-          />
-        </Link>
-        <Link href="https://opensea.io/collection/pirate-soul-island">
-          <a target="_blank" className={styles.button}>
-            explore on Opensea!
-          </a>
-        </Link>
+        </div>
+
+        <div className={styles.item}>
+          <Link href="pirate-soul-island">
+            <a>
+              {" "}
+              <img className={styles.featureImage} src="./psi.png" />
+              <div className={styles.description}>
+                <h3 className={styles.title}>Pirate Soul Island</h3>
+              </div>
+            </a>
+          </Link>
+          <Link href="https://opensea.io/collection/pirate-soul-island">
+            <a target="_blank">
+              {" "}
+              <img className={styles.oslogo} src="./oslogo.png" />{" "}
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,48 +1,48 @@
-.container {
-  /* min-height: 100vh; */
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.container img {
+  max-width: 100%;
 }
 
-.container a {
-  color: rgb(224, 224, 224);
-  transition: 0.5s ease;
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  text-align: center;
+  grid-gap: 1em;
+  padding: 5em;
+}
+
+.featureImage {
+  width: 100%;
+  height: auto;
+}
+
+.item {
+  background: rgba(53, 42, 25, 0.384);
+  border: 10px double #3f3531;
+  transition: ease 0.5s;
+  padding: 20px;
+}
+
+.item:hover {
+  box-shadow: 0 0 10px rgb(201, 191, 138);
+}
+
+.description {
+  padding: 1em;
+  color: rgb(236, 235, 231);
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+.oslogo {
+  width: 30px;
   cursor: pointer;
+  transition: ease 0.5s;
+  border-radius: 50%;
 }
-
-.container a:hover {
-  color: #ffff;
-}
-
-.image {
-  cursor: pointer;
-  border-radius: 5%;
-  border: 1px solid white;
-  opacity: 0.8;
-  transition: 0.5s ease;
-}
-
-.image:hover {
-  opacity: 1;
-  border-radius: 0;
-}
-
-.button {
-  background: #5f583f91;
-  cursor: pointer;
-  padding: 0.2rem;
-  font-size: 20px;
-  border-radius: 5px;
-  border: 1px solid #313131;
-  color: #ffffff;
-  transition: ease 0.4s;
-  margin: 15px;
-  padding: 5px;
-}
-
-.button:hover {
-  background: #5f583f;
+.oslogo:hover {
+  background: rgb(50, 127, 216);
 }

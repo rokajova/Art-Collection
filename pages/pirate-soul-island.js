@@ -48,14 +48,15 @@ export default function Home() {
               <a href="#!" className={styles.close}></a>
               <img src={res.original} />
               <h3 className={styles.lightboxTitle}>{res.description}</h3>
-              <p className={styles.lightboxBody}>{res.lore}</p>
-              <a
-                href="https://opensea.io/collection/pirate-soul-island"
-                target="_blank"
-              >
-                {" "}
-                <img className={styles.oslogo} src="./oslogo.png" />{" "}
-              </a>
+              <p className={styles.lightboxBody}>
+                <i>{res.lore}</i>
+              </p>
+              <Link href="https://opensea.io/collection/pirate-soul-island">
+                <a target="_blank">
+                  {" "}
+                  <img className={styles.oslogo} src="./oslogo.png" />{" "}
+                </a>
+              </Link>
             </div>
           </div>
         ))}
