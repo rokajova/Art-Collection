@@ -24,7 +24,7 @@ export default function Home() {
       });
   }, []);
 
-  const artPerPage = 3;
+  const artPerPage = 30;
   const pagesVisited = pageNumber * artPerPage;
 
   const displayArt = art
