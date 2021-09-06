@@ -22,5 +22,13 @@ export default function Home() {
       });
   }, []);
 
-  return <div>Nuke Nations!</div>;
+  return (
+    <>
+      <Head>
+        <title>Nuked Nations | Collection</title>
+        <meta name="keywords" content="nft-collection" />
+      </Head>
+      <div>Nuke Nations!</div>;
+    </>
+  );
 }
