@@ -57,6 +57,7 @@ export default function Home() {
         nextLabel={">"}
         pageCount={pageCount}
         onPageChange={changePage}
+        pageRangeDisplayed={10}
         containerClassName={styles.paginationBttns}
         previousLinkClassName={styles.previousBttns}
         nextLinkClassName={styles.nextBtn}
