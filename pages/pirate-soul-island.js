@@ -51,7 +51,7 @@ export default function Home() {
               <p className={styles.lightboxBody}>
                 <i>{res.lore}</i>
               </p>
-              <Link href="https://opensea.io/collection/pirate-soul-island">
+              <Link href={res.link}>
                 <a target="_blank">
                   {" "}
                   <img className={styles.oslogo} src="./oslogo.png" />{" "}
