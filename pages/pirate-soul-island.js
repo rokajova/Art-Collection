@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import "firebase/storage";
 import styles from "../styles/Collection.module.css";
+import ReactPaginate from "react-paginate";
 
 export default function Home() {
   const [art, setArt] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
 
   useEffect(() => {
     firebase
@@ -22,22 +24,45 @@ export default function Home() {
       });
   }, []);
 
+  const artPerPage = 3;
+  const pagesVisited = pageNumber * artPerPage;
+
+  const displayArt = art
+    .slice(pagesVisited, pagesVisited + artPerPage)
+    .map((res) => (
+      <div className={styles.item}>
+        <a href={"#" + res.number}>
+          {" "}
+          <img src={res.original} />
+          <div className={styles.description}>
+            <h3 className={styles.title}>{res.description}</h3>
+          </div>
+        </a>
+      </div>
+    ));
+
+  const pageCount = Math.ceil(art.length / artPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   return (
     <div className={styles.container}>
       {/* Items */}
-      <div className={styles.portfolio}>
-        {art.map((res) => (
-          <div className={styles.item}>
-            <a href={"#" + res.number}>
-              {" "}
-              <img src={res.original} />
-              <div className={styles.description}>
-                <h3 className={styles.title}>{res.description}</h3>
-              </div>
-            </a>
-          </div>
-        ))}
-      </div>
+      <div className={styles.portfolio}>{displayArt}</div>
+
+      <ReactPaginate
+        previousLabel={"<"}
+        nextLabel={">"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={styles.paginationBttns}
+        previousLinkClassName={styles.previousBttns}
+        nextLinkClassName={styles.nextBtn}
+        disabledClassName={styles.paginationDisabled}
+        activeClassName={styles.paginationActive}
+      />
 
       {/* Lightbox */}
 

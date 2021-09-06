@@ -2,11 +2,14 @@
   max-width: 100%;
 }
 
+/* CARD */
+
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1em;
   padding: 1em;
+  text-align: center;
 }
 
 .portfolio img {
@@ -26,7 +29,6 @@
 
 .description {
   padding: 1em;
-  text-align: center;
   color: rgb(236, 235, 231);
   letter-spacing: 1px;
 }
@@ -35,6 +37,8 @@
   font-size: 1.5em;
   margin-top: 0;
 }
+
+/* LIGHTBOX */
 
 .lightbox {
   position: fixed;
@@ -93,4 +97,33 @@
 }
 .oslogo:hover {
   background: rgb(50, 127, 216);
+}
+
+/* PAGINATION */
+
+.paginationBttns {
+  width: 80%;
+  list-style: none;
+  display: flex;
+  /* justify-content: center; */
+  margin: 0;
+  padding-left: 16px;
+}
+
+.paginationBttns a {
+  margin: 5px;
+  color: #eceadc;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: rgb(54, 48, 27);
+}
+
+.paginationActive a {
+  color: rgb(54, 48, 27);
+}
+
+.nextBtn {
+  border: none;
 }
