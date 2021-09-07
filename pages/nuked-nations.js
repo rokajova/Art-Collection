@@ -28,7 +28,7 @@ export default function Home() {
         <title>Nuked Nations | Collection</title>
         <meta name="keywords" content="nft-collection" />
       </Head>
-      <div>Nuke Nations!</div>;
+      <div>Nuke Nations! Coming soon...</div>
     </>
   );
 }
