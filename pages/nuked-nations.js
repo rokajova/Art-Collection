@@ -56,6 +56,7 @@ export default function Home() {
       <Head>
         <title>Nuked Nations | Collection</title>
         <meta name="keywords" content="nft-collection" />
+        <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
       </Head>
       {/* adding data to db */}
       {/* <form style={{ padding: "30px", textAlign: "center" }}>
@@ -78,7 +79,7 @@ export default function Home() {
           placeholder="token id"
           value={TI}
           onChange={({ target }) => setTI(target.value)}
-        />    
+        />
         <br />
         {submitCondition ? (
           <button onClick={handleSubmit}>Post!</button>
@@ -115,7 +116,6 @@ export default function Home() {
               contractAddress={res.contractAddress}
               tokenId={res.tokenId}
             ></nft-card>
-            <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
           </div>
         ))}
         <ReactPaginate
