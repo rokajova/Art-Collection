@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import "firebase/storage";
-import styles from "../styles/Collection.module.css";
+import styles from "../styles/PirateSoulIsland.module.css";
 import ReactPaginate from "react-paginate";
 
 export default function Home() {

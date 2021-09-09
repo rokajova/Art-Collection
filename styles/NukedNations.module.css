@@ -1,0 +1,61 @@
+.collectionDescription {
+  padding: 20px 30px 0px 30px;
+  margin: 0px 0.75em;
+  text-align: center;
+  border: 10px double #3f3531;
+  line-height: 2rem;
+}
+
+/* CARD */
+
+.item {
+  background: rgba(53, 42, 25, 0.384);
+  border: 10px double #3f3531;
+  transition: ease 0.5s;
+  margin: 0.75em;
+  display: inline-block;
+}
+
+.item:hover {
+  box-shadow: 0 0 10px rgb(201, 191, 138);
+  cursor: pointer;
+}
+
+.oslogo {
+  width: 30px;
+  cursor: pointer;
+  transition: ease 0.5s;
+  border-radius: 50%;
+}
+.oslogo:hover {
+  background: rgb(50, 127, 216);
+}
+
+/* PAGINATION */
+
+.paginationBttns {
+  width: 80%;
+  list-style: none;
+  display: flex;
+  /* justify-content: center; */
+  margin: 0;
+  padding-left: 16px;
+}
+
+.paginationBttns a {
+  margin: 3px;
+  color: #eceadc;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: rgb(54, 48, 27);
+}
+
+.paginationActive a {
+  color: rgb(54, 48, 27);
+}
+
+.nextBtn {
+  border: none;
+}

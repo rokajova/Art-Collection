@@ -10,6 +10,7 @@ export default function Home() {
         <title>Home | Collections</title>
         <meta name="keywords" content="nft" />
       </Head>
+
       <div className={styles.container}>
         <div className={styles.portfolio}>
           <div className={styles.item}>
