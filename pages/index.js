@@ -14,7 +14,7 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.portfolio}>
           <div className={styles.item}>
-            <Link href="nuked-nations">
+            <Link href="nukednations">
               <a>
                 {" "}
                 <img className={styles.featureImage} src="./nn.png" />
