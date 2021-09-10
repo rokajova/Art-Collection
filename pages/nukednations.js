@@ -11,22 +11,25 @@ export default function Home() {
   const [pageNumber, setPageNumber] = useState(0);
 
   // for adding data
-  const [TI, setTI] = useState();
-  const [CA, setCA] = useState();
-  const [number, setNumber] = useState();
+  const [TI, setTI] = useState("");
+  const [CA, setCA] = useState("");
+  const [number, setNumber] = useState(0);
   const submitCondition = TI && CA && number;
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    firebase.firestore().collection("NukedNations").add({
-      tokenId: TI,
-      contractAddress: CA,
-      number: number,
-    });
+    firebase
+      .firestore()
+      .collection("NukedNations")
+      .add({
+        tokenId: TI,
+        contractAddress: CA,
+        number: parseInt(number),
+      });
 
     setTI("");
     setCA("");
-    setNumber("");
+    setNumber(0);
   };
 
   //for pagination
@@ -59,11 +62,12 @@ export default function Home() {
         <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
       </Head>
       {/* adding data to db */}
-      {/* <form style={{ padding: "30px", textAlign: "center" }}>
+      <form style={{ padding: "30px", textAlign: "center" }}>
         <input
           type="number"
           placeholder="Number"
           value={number}
+          disabled
           onChange={({ target }) => setNumber(target.value)}
         />
         <br />
@@ -72,6 +76,7 @@ export default function Home() {
           placeholder="contract address"
           value={CA}
           onChange={({ target }) => setCA(target.value)}
+          disabled
         />
         <br />
         <input
@@ -86,7 +91,7 @@ export default function Home() {
         ) : (
           <button disabled>Post!</button>
         )}
-      </form> */}
+      </form>
 
       <div className={styles.container}>
         <div className={styles.collectionDescription}>
@@ -101,7 +106,7 @@ export default function Home() {
             <br />
             Only 198 will ever be minted!
             <br />
-            <Link href="https://opensea.io/collection/nuked-nations">
+            <Link href="https://opensea.io/collection/nukednations">
               <a target="_blank">
                 {" "}
                 <img className={styles.oslogo} src="./oslogo.png" />{" "}

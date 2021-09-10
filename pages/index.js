@@ -23,7 +23,7 @@ export default function Home() {
                 </div>
               </a>
             </Link>
-            <Link href="https://opensea.io/collection/nuked-nations">
+            <Link href="https://opensea.io/collection/nukednations">
               <a target="_blank">
                 {" "}
                 <img className={styles.oslogo} src="./oslogo.png" />{" "}
