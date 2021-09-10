@@ -12,9 +12,10 @@ export default function Home() {
 
   // for adding data
   const [TI, setTI] = useState("");
-  const [CA, setCA] = useState("");
+  // const [CA, setCA] = useState("");
   const [number, setNumber] = useState(0);
-  const submitCondition = TI && CA && number;
+
+  const submitCondition = TI && number;
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -23,21 +24,13 @@ export default function Home() {
       .collection("NukedNations")
       .add({
         tokenId: TI,
-        contractAddress: CA,
+        contractAddress: "0x495f947276749ce646f68ac8c248420045cb7b5e",
         number: parseInt(number),
       });
 
     setTI("");
-    setCA("");
+    // setCA("");
     setNumber(0);
-  };
-
-  //for pagination
-  const artPerPage = 20;
-  const pagesVisited = pageNumber * artPerPage;
-  const pageCount = Math.ceil(art.length / artPerPage);
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
   };
 
   useEffect(() => {
@@ -54,6 +47,25 @@ export default function Home() {
       });
   }, []);
 
+  //for pagination
+  const artPerPage = 20;
+  const pagesVisited = pageNumber * artPerPage;
+  const pageCount = Math.ceil(art.length / artPerPage);
+  const displayArt = art
+    .slice(pagesVisited, pagesVisited + artPerPage)
+    .map((res) => (
+      <div className={styles.item}>
+        <nft-card
+          contractAddress={res.contractAddress}
+          tokenId={res.tokenId}
+        ></nft-card>
+      </div>
+    ));
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   return (
     <>
       <Head>
@@ -62,22 +74,15 @@ export default function Home() {
         <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
       </Head>
       {/* adding data to db */}
-      <form style={{ padding: "30px", textAlign: "center" }}>
+      {/* <form style={{ padding: "30px", textAlign: "center" }}>
         <input
           type="number"
           placeholder="Number"
           value={number}
-          disabled
           onChange={({ target }) => setNumber(target.value)}
         />
         <br />
-        <input
-          type="text"
-          placeholder="contract address"
-          value={CA}
-          onChange={({ target }) => setCA(target.value)}
-          disabled
-        />
+        <input type="text" placeholder="contract address" disabled />
         <br />
         <input
           type="text"
@@ -91,7 +96,7 @@ export default function Home() {
         ) : (
           <button disabled>Post!</button>
         )}
-      </form>
+      </form> */}
 
       <div className={styles.container}>
         <div className={styles.collectionDescription}>
@@ -115,14 +120,7 @@ export default function Home() {
           </p>
         </div>{" "}
         {/* Populate with data from db */}
-        {art.map((res) => (
-          <div className={styles.item}>
-            <nft-card
-              contractAddress={res.contractAddress}
-              tokenId={res.tokenId}
-            ></nft-card>
-          </div>
-        ))}
+        {displayArt}
         <ReactPaginate
           previousLabel={"<"}
           nextLabel={">"}
