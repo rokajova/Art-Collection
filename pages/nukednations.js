@@ -50,7 +50,6 @@ export default function Home() {
   //for pagination
   const artPerPage = 20;
   const pagesVisited = pageNumber * artPerPage;
-  const pageCount = Math.ceil(art.length / artPerPage);
   const displayArt = art
     .slice(pagesVisited, pagesVisited + artPerPage)
     .map((res) => (
@@ -61,7 +60,7 @@ export default function Home() {
         ></nft-card>
       </div>
     ));
-
+  const pageCount = Math.ceil(art.length / artPerPage);
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
