@@ -4,18 +4,17 @@ import { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import "firebase/storage";
 import styles from "../styles/NukedNations.module.css";
-import ReactPaginate from "react-paginate";
 
 export default function Home() {
   const [art, setArt] = useState([]);
-  const [pageNumber, setPageNumber] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // for adding data
   const [TI, setTI] = useState("");
-  // const [CA, setCA] = useState("");
+  const [description, setDescription] = useState("");
   const [number, setNumber] = useState(0);
 
-  const submitCondition = TI && number;
+  const submitCondition = TI && number && description;
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -26,11 +25,13 @@ export default function Home() {
         tokenId: TI,
         contractAddress: "0x495f947276749ce646f68ac8c248420045cb7b5e",
         number: parseInt(number),
+        description: description,
       });
 
     setTI("");
     // setCA("");
     setNumber(0);
+    setDescription("");
   };
 
   useEffect(() => {
@@ -47,11 +48,16 @@ export default function Home() {
       });
   }, []);
 
-  //for pagination
-  const artPerPage = 20;
-  const pagesVisited = pageNumber * artPerPage;
   const displayArt = art
-    .slice(pagesVisited, pagesVisited + artPerPage)
+    .filter((res) => {
+      if (searchTerm == "") {
+        return res;
+      } else if (
+        res.description.toLowerCase().includes(searchTerm.toLowerCase())
+      ) {
+        return res;
+      }
+    })
     .map((res) => (
       <div className={styles.item}>
         <nft-card
@@ -60,10 +66,6 @@ export default function Home() {
         ></nft-card>
       </div>
     ));
-  const pageCount = Math.ceil(art.length / artPerPage);
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
 
   return (
     <>
@@ -79,6 +81,13 @@ export default function Home() {
           placeholder="Number"
           value={number}
           onChange={({ target }) => setNumber(target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="description"
+          value={description}
+          onChange={({ target }) => setDescription(target.value)}
         />
         <br />
         <input type="text" placeholder="contract address" disabled />
@@ -118,20 +127,15 @@ export default function Home() {
             </Link>
           </p>
         </div>{" "}
+        {/* <input
+          type="text"
+          placeholder="search"
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        /> */}
         {/* Populate with data from db */}
         {displayArt}
-        <ReactPaginate
-          previousLabel={"<"}
-          nextLabel={">"}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          pageRangeDisplayed={10}
-          containerClassName={styles.paginationBttns}
-          previousLinkClassName={styles.previousBttns}
-          nextLinkClassName={styles.nextBtn}
-          disabledClassName={styles.paginationDisabled}
-          activeClassName={styles.paginationActive}
-        />
       </div>
     </>
   );
