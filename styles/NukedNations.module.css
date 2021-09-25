@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.container input {
+  margin-top: 10px;
+  font-size: 16px;
+  font-size: Max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: 1px solid var(--input-border);
+  border-radius: 2px;
+  transition: 180ms box-shadow ease-in-out;
+}
+
 .collectionDescription {
   padding: 20px 30px 0px 30px;
   margin: 0px 0.75em;
@@ -37,11 +49,10 @@
 
 /* PAGINATION */
 
-.paginationBttns {
+/* .paginationBttns {
   width: 80%;
   list-style: none;
   display: flex;
-  /* justify-content: center; */
   margin: 0;
   padding-left: 16px;
 }
@@ -62,4 +73,4 @@
 
 .nextBtn {
   border: none;
-}
+} */

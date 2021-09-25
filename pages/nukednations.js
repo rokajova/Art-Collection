@@ -134,6 +134,7 @@ export default function Home() {
             setSearchTerm(event.target.value);
           }}
         /> */}
+        <br />
         {/* Populate with data from db */}
         {displayArt}
       </div>
