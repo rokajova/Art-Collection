@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import "firebase/storage";
 import styles from "../styles/PirateSoulIsland.module.css";
-import ReactPaginate from "react-paginate";
 
 export default function Home() {
   const [art, setArt] = useState([]);
-  const [pageNumber, setPageNumber] = useState(0);
+
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     firebase
@@ -25,10 +25,16 @@ export default function Home() {
       });
   }, []);
 
-  const artPerPage = 15;
-  const pagesVisited = pageNumber * artPerPage;
   const displayArt = art
-    .slice(pagesVisited, pagesVisited + artPerPage)
+    .filter((res) => {
+      if (searchTerm == "") {
+        return res;
+      } else if (
+        res.description.toLowerCase().includes(searchTerm.toLowerCase())
+      ) {
+        return res;
+      }
+    })
     .map((res) => (
       <div className={styles.item}>
         <a href={"#" + res.number}>
@@ -40,12 +46,6 @@ export default function Home() {
         </a>
       </div>
     ));
-
-  const pageCount = Math.ceil(art.length / artPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
 
   return (
     <>
@@ -73,19 +73,15 @@ export default function Home() {
             </Link>
           </p>
         </div>
-        <div className={styles.portfolio}>{displayArt}</div>
-        <ReactPaginate
-          previousLabel={"<"}
-          nextLabel={">"}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          pageRangeDisplayed={10}
-          containerClassName={styles.paginationBttns}
-          previousLinkClassName={styles.previousBttns}
-          nextLinkClassName={styles.nextBtn}
-          disabledClassName={styles.paginationDisabled}
-          activeClassName={styles.paginationActive}
+        <input
+          type="text"
+          placeholder="search..."
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
         />
+        <div className={styles.portfolio}>{displayArt}</div>
+
         {/* Lightbox */}
         <div className={styles.lightboxes}>
           {art.map((res) => (

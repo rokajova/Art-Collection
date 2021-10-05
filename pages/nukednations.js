@@ -23,24 +23,24 @@ export default function Home() {
   //     });
   // }, [searchTerm]);
 
-  const displayArt = art
-    .filter((res) => {
-      if (searchTerm == "") {
-        return res;
-      } else if (
-        res.description.toLowerCase().includes(searchTerm.toLowerCase())
-      ) {
-        return res;
-      }
-    })
-    .map((res) => (
-      <div className={styles.item}>
-        <nft-card
-          contractAddress={res.contractAddress}
-          tokenId={res.tokenId}
-        ></nft-card>
-      </div>
-    ));
+  // const displayArt = art
+  //   .filter((res) => {
+  //     if (searchTerm == "") {
+  //       return res;
+  //     } else if (
+  //       res.description.toLowerCase().includes(searchTerm.toLowerCase())
+  //     ) {
+  //       return res;
+  //     }
+  //   })
+  //   .map((res) => (
+  //     <div className={styles.item}>
+  //       <nft-card
+  //         contractAddress={res.contractAddress}
+  //         tokenId={res.tokenId}
+  //       ></nft-card>
+  //     </div>
+  //   ));
 
   return (
     <>
