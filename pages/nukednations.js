@@ -6,47 +6,22 @@ import "firebase/storage";
 import styles from "../styles/NukedNations.module.css";
 
 export default function Home() {
-  const [art, setArt] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [art, setArt] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState("");
 
-  // for adding data
-  const [TI, setTI] = useState("");
-  const [description, setDescription] = useState("");
-  const [number, setNumber] = useState(0);
-
-  const submitCondition = TI && number && description;
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    firebase
-      .firestore()
-      .collection("NukedNations")
-      .add({
-        tokenId: TI,
-        contractAddress: "0x495f947276749ce646f68ac8c248420045cb7b5e",
-        number: parseInt(number),
-        description: description,
-      });
-
-    setTI("");
-    // setCA("");
-    setNumber(0);
-    setDescription("");
-  };
-
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection("NukedNations")
-      .orderBy("number")
-      .onSnapshot((snap) => {
-        const art = snap.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setArt(art);
-      });
-  }, [searchTerm]);
+  // useEffect(() => {
+  //   firebase
+  //     .firestore()
+  //     .collection("NukedNations")
+  //     .orderBy("number")
+  //     .onSnapshot((snap) => {
+  //       const art = snap.docs.map((doc) => ({
+  //         id: doc.id,
+  //         ...doc.data(),
+  //       }));
+  //       setArt(art);
+  //     });
+  // }, [searchTerm]);
 
   const displayArt = art
     .filter((res) => {
