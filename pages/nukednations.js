@@ -46,7 +46,7 @@ export default function Home() {
         }));
         setArt(art);
       });
-  }, []);
+  }, [searchTerm]);
 
   const displayArt = art
     .filter((res) => {
@@ -74,69 +74,17 @@ export default function Home() {
         <meta name="keywords" content="nft-collection" />
         <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
       </Head>
-      {/* adding data to db */}
-      {/* <form style={{ padding: "30px", textAlign: "center" }}>
-        <input
-          type="number"
-          placeholder="Number"
-          value={number}
-          onChange={({ target }) => setNumber(target.value)}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="description"
-          value={description}
-          onChange={({ target }) => setDescription(target.value)}
-        />
-        <br />
-        <input type="text" placeholder="contract address" disabled />
-        <br />
-        <input
-          type="text"
-          placeholder="token id"
-          value={TI}
-          onChange={({ target }) => setTI(target.value)}
-        />
-        <br />
-        {submitCondition ? (
-          <button onClick={handleSubmit}>Post!</button>
-        ) : (
-          <button disabled>Post!</button>
-        )}
-      </form> */}
-
       <div className={styles.container}>
-        <div className={styles.collectionDescription}>
-          <p>
-            "A nuke for each nation of the world!"
-            <br />
-            Nuked Nations is a collection of 198 unrepeatable moving paintings
-            drawn by artificial intelligence. <br /> Each painting represents a
-            country. Each painting has 4 properties: continent, population,
-            island nation, nuclear nation. Each painting has unique unlockable
-            content.
-            <br />
-            Only 198 will ever be minted!
-            <br />
-            <Link href="https://opensea.io/collection/nukednations">
-              <a target="_blank">
-                {" "}
-                <img className={styles.oslogo} src="./oslogo.png" />{" "}
-              </a>
-            </Link>
-          </p>
+        <div className={styles.iframe}>
+          {" "}
+          <iframe
+            src="https://opensea.io/collection/nukednations?embed=true"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
         </div>{" "}
-        {/* <input
-          type="text"
-          placeholder="search"
-          onChange={(event) => {
-            setSearchTerm(event.target.value);
-          }}
-        /> */}
-        <br />
-        {/* Populate with data from db */}
-        {displayArt}
       </div>
     </>
   );
