@@ -49,12 +49,11 @@ export default function Home() {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Pirate Soul Island | Collection</title>
         <meta name="keywords" content="nft-collection" />
       </Head>
       <div className={styles.container}>
-        {/* Items */}
         <div className={styles.collectionDescription}>
           <p>
             "What untold secrets are hidden here? Why so many have entered, but
@@ -82,7 +81,6 @@ export default function Home() {
         />
         <div className={styles.portfolio}>{displayArt}</div>
 
-        {/* Lightbox */}
         <div className={styles.lightboxes}>
           {art.map((res) => (
             <div id={res.number} className={styles.lightbox}>
@@ -103,7 +101,26 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
+      <>
+        <Head>
+          <title>Pirate Soul Island | Collection</title>
+          <meta name="keywords" content="nft-collection" />
+          <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
+        </Head>
+        <div className={styles.container}>
+          <div className={styles.iframe}>
+            {" "}
+            <iframe
+              src="https://opensea.io/collection/pirate-soul-island?embed=true"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>{" "}
+        </div>
+      </>
     </>
   );
 }
